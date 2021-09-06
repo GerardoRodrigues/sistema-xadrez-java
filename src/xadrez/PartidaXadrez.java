@@ -5,6 +5,7 @@ import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
 import xadrez.pecas.Rei;
 import xadrez.pecas.Torre;
+import xadrez.PosicaoXadrez;
 
 public class PartidaXadrez {
 
@@ -25,6 +26,12 @@ public class PartidaXadrez {
 		return matriz;
 	}
 
+	public boolean[][] possiveisMovimentos(PosicaoXadrez posicaoDeOrigem){
+		Posicao posicao = posicaoDeOrigem.toPosicao();
+		validarPosicaoOrigem(posicao);
+		return tabuleiro.peca(posicao).possiveisMovimentos();
+	}
+	
 	public PecaXadrez executarPecaXadrez(PosicaoXadrez posicaoOrigem, PosicaoXadrez posicaoDestino) {
 		Posicao origem = posicaoOrigem.toPosicao();
 		Posicao destino = posicaoDestino.toPosicao();

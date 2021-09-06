@@ -13,7 +13,6 @@ public class Programa {
 	public static void main(String[] args) {
 		
 		Scanner sc = new Scanner(System.in);
-		
 		PartidaXadrez partida = new PartidaXadrez();
 		
 		while(true) {
@@ -23,6 +22,10 @@ public class Programa {
 				System.out.println();
 				System.out.print("Origem: ");
 				PosicaoXadrez origem = UI.lerPosicaoXadrez(sc);
+				
+				boolean possiveisMovimentos[][] = partida.possiveisMovimentos(origem);
+				UI.limparTela();
+				UI.printTabuleiro(partida.getPecas(), possiveisMovimentos);
 				
 				System.out.println();
 				System.out.print("Destino: ");
