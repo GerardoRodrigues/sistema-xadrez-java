@@ -11,6 +11,11 @@ public class Cavalo extends PecaXadrez{
 	public Cavalo(Tabuleiro tabuleiro, Cor cor) {
 		super(tabuleiro, cor);
 	}
+	
+	@Override
+	public String toString() {
+		return "C";
+	}
 
 	private boolean podeMover(Posicao posicao) {
 		PecaXadrez p = (PecaXadrez) getTabuleiro().peca(posicao);
@@ -64,10 +69,5 @@ public class Cavalo extends PecaXadrez{
 		}
 		
 		return mat;
-	}
-
-	@Override
-	public String toString() {
-		return "C";
 	}
 }
