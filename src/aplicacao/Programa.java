@@ -40,6 +40,12 @@ public class Programa {
 				if(pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
 				}
+				
+				if(partida.getPromocao() != null) {
+					System.out.print("Escolha a peca para a promocao (B/T/C/Q): ");
+					String tipo = sc.nextLine().toUpperCase();
+					partida.pecaPromovida(tipo);
+				}
 			}catch(ExecaoXadrez e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();
