@@ -44,6 +44,10 @@ public class Programa {
 				if(partida.getPromocao() != null) {
 					System.out.print("Escolha a peca para a promocao (B/T/C/Q): ");
 					String tipo = sc.nextLine().toUpperCase();
+					while(!tipo.equals("B") && !tipo.equals("T") && !tipo.equals("C") && !tipo.equals("Q")) {
+						System.out.print("Escolah invalida. Escolha a peca certa para a promocao (B/T/C/Q): ");
+						tipo = sc.nextLine().toUpperCase();
+					}
 					partida.pecaPromovida(tipo);
 				}
 			}catch(ExecaoXadrez e) {
